@@ -329,7 +329,7 @@ tv.input.list().then(data => {
 
 ### `input.set(name)`
 
-Set the current input to the specified name. Name can be either the built-in name or the user defined name and is case insensitive.
+Set the current input to the specified name. Name must be the input's CNAME and is case sensitive.
 
 #### Returns
 
@@ -343,11 +343,8 @@ Set the current input to the specified name. Name can be either the built-in nam
 let smartcast = require('vizio-smart-cast');
 let tv = new smartcast('192.168.0.101', 'xAuthTokenx');
 
-// Built in names
-tv.input.set('HDMI-1');
-
-// User defined names
-tv.input.set('Kodi');
+// Built in cname
+tv.input.set('hdmi1');
 ```
 
 ### `control.volume.down()`
