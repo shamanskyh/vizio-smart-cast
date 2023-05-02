@@ -36,17 +36,10 @@ let keyData = (codeset, code, action) => {
 
 let findInputByName = (name, list) => {
 
-    // first search by internal name
+    // support only CNAME lookup, case sensitive
     for (let i = 0; i < list.ITEMS.length; i++) {
-        if (list.ITEMS[i].NAME.toLowerCase() === name.toLowerCase()) {
-            return list.ITEMS[i].NAME;
-        }
-    };
-
-    // second search by user name
-    for (let i = 0; i < list.ITEMS.length; i++) {
-        if (list.ITEMS[i].VALUE.NAME.toLowerCase() === name.toLowerCase()) {
-            return list.ITEMS[i].NAME;
+        if (list.ITEMS[i].CNAME === name) {
+            return list.ITEMS[i].CNAME;
         }
     };
 
